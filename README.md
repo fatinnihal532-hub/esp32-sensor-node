@@ -5,7 +5,7 @@ once, and a small Python program on the laptop that logs and plots what it says.
 
 Runs in the browser on [Wokwi](https://wokwi.com); no hardware required.
 
-![Telemetry plot](docs/telemetry.png)
+![Telemetry plot](docs/telemetry.svg)
 
 | Interface | Used for | Pins |
 |---|---|---|
@@ -78,7 +78,7 @@ pip install -r requirements.txt
 
 # no hardware yet? build a sample run and plot it
 python host/make_sample.py --out data/sample_run.csv
-python host/plot_run.py data/sample_run.csv --out docs/telemetry.png
+python host/plot_run.py data/sample_run.csv --out docs/telemetry.svg
 
 # with a real board plugged in
 python host/log_serial.py --port /dev/ttyUSB0 --out data/run1.csv
@@ -98,7 +98,7 @@ host/log_serial.py       capture the serial stream to CSV
 host/plot_run.py         turn a CSV into a chart
 host/make_sample.py      generate a sample run without hardware
 data/sample_run.csv      20 minutes of sample data
-docs/telemetry.png       the chart above
+docs/telemetry.svg       the chart above
 ```
 
 ## Possible extensions
