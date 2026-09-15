@@ -76,7 +76,7 @@ habit worth forming early.
 ```bash
 pip install -r requirements.txt
 
-# no hardware yet? build a sample run and plot it
+# no hardware yet? build the 20-minute sample run and plot it
 python host/make_sample.py --out data/sample_run.csv
 python host/plot_run.py data/sample_run.csv --out docs/telemetry.svg
 
@@ -97,7 +97,7 @@ diagram.json             the simulator circuit
 host/log_serial.py       capture the serial stream to CSV
 host/plot_run.py         turn a CSV into a chart
 host/make_sample.py      generate a sample run without hardware
-data/sample_run.csv      20 minutes of sample data
+data/sample_run.csv      20 minutes of sample data (generated, not committed)
 docs/telemetry.svg       the chart above
 ```
 
