@@ -3,7 +3,7 @@
 An instrumentation node that talks to the outside world four different ways at
 once, and a small Python program on the laptop that logs and plots what it says.
 
-Runs in the browser on [Wokwi](https://wokwi.com); no hardware required.
+**[Run it in your browser](https://wokwi.com/projects/475219333641877505)** on Wokwi, no hardware required.
 
 ![Telemetry plot](docs/telemetry.svg)
 
