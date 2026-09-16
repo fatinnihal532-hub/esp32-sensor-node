@@ -40,7 +40,7 @@ DHTesp dht;
 static float    temperature = 0.0f;
 static float    humidity    = 0.0f;
 static float    setpoint    = 30.0f;
-static bool     alarm       = false;
+static bool     alarm_on       = false;
 static bool     sensorOk    = false;
 static uint32_t samples     = 0;
 
@@ -66,7 +66,7 @@ static void printSample()
     Serial.print(temperature, 2); Serial.print(',');
     Serial.print(humidity, 2);    Serial.print(',');
     Serial.print(setpoint, 2);    Serial.print(',');
-    Serial.println(alarm ? 1 : 0);
+    Serial.println(alarm_on ? 1 : 0);
 }
 
 static void handleSerial()
@@ -137,8 +137,8 @@ void loop()
                 humidity    = ema(humidity,    r.humidity,    0.3f);
             }
             samples++;
-            alarm = (temperature > setpoint);
-            digitalWrite(PIN_LED, alarm ? HIGH : LOW);
+            alarm_on = (temperature > setpoint);
+            digitalWrite(PIN_LED, alarm_on ? HIGH : LOW);
             printSample();
         } else {
             Serial.print(F("# sensor error: "));
@@ -156,7 +156,7 @@ void loop()
         lcd.print(line);
 
         snprintf(line, sizeof(line), "Set:%4.1fC %s", setpoint,
-                 alarm ? "ALARM" : "  ok ");
+                 alarm_on ? "ALARM" : "  ok ");
         lcd.setCursor(0, 1);
         lcd.print(line);
     }
